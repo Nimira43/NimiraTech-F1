@@ -25,6 +25,10 @@ html {
     --grey-light: #cccccc;
 }
 
+body {
+    background-color: var(--dark);
+}
+
 .center {
     display: flex;
     align-items: center;
@@ -34,7 +38,7 @@ html {
 .section-1 {
     width: 100%;
     height: 100vh;
-    background-color: var(--primary);
+    /* background-color: var(--primary); */
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -327,10 +331,6 @@ html {
     }
 }
 
-@media (max-width: 900px) {
-
-}
-
 @media (max-width: 700px) {
     .logo { 
         top: 0;
@@ -384,5 +384,108 @@ html {
     .section-1-banner p {
         text-align: center;
     }
-
 }
+
+.section-2 {
+    width: 100%;
+    height: 120vh;
+    padding: 10vh 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: var(--dark); */
+}
+
+.section-2-heading {
+    font-size: 10rem;
+    font-weight: 200;
+    color: var(--light);
+    position: relative;  
+    margin-bottom: 5rem;
+    /* padding: 0 5rem 0 0; */
+}
+
+.section-2-heading::before {
+    content: '';
+    width: 150%;
+    height: 30vw;
+    background-color: var(--primary);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: skewX(-50deg);
+    transform-origin: left top;
+    z-index: -1;
+    border-radius: 1rem;
+}
+
+.phones {
+    height: 60vh;
+    width: 50vw;
+    background-color: var(--light);
+    border-radius: 0.5rem;
+}
+
+.phones img {
+    width: inherit;
+    height: inherit;
+    object-fit: contain;
+    position: absolute;
+    transition: opacity 3s;
+}
+
+.phone-img-2 {
+    opacity: 0;
+}
+
+.phones:hover .phone-img-1 {
+    opacity: 0;
+}
+
+.phones:hover .phone-img-2 {
+    opacity: 1;
+}
+
+.phone-btns {
+    display: flex;
+}
+
+.phone-btn {
+    width: 6rem;
+    height: 6rem;
+    background-color: var(--primary);
+    margin: 0 3rem;
+    border-radius: 50%;
+    border: 0.1rem solid var(--black);
+    position: relative;
+}
+
+.phone-btn::after {
+    content: '';
+    width: 50%;
+    height: 50%;
+    display: block;
+    border: 0.1rem solid var(--black);
+    border-radius: 50%;
+}
+
+.phone-btn span {
+    position: absolute;
+    top: -3rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    color:  var(--primary);
+    width: max-content;
+    transform: scale(0);
+    transition: transform 0.5s;
+    background-color: var(--black);
+    padding: 0 0.3rem;
+    border-radius: 0.3rem;
+}
+
+.phone-btn:hover span {
+    transform: scale(1);
+}
+
