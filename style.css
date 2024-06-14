@@ -16,8 +16,8 @@ html {
 
 :root {
     --primary: #ff4500;
-    --primary-2: #872400;
-    --primary-3: #ff6e3a;
+    --primary-2: #cd3802;
+    --primary-3: #f95d24;
     --light: #f5f5dc;
     --dark: #111111;
     --black: #000000;
@@ -76,9 +76,11 @@ html {
 .cube {
     width: 30rem;
     height: 55rem;
-    background: yellow;
     transform-style: preserve-3d;
-    transform: rotateY(140deg);
+    transform: rotateX(0) rotateY(20deg) rotateZ(0); 
+    position: relative;
+    top: -2rem;
+    transition: transform 0.5s;
 }
 
 .front-side,
@@ -87,11 +89,37 @@ html {
     height: 100%;
     background-color: var(--primary);
     position: absolute;
+    transform-style: preserve-3d;
+    border: 2px solid var(--black);
 }
 
 .front-side {
     padding: 2.5rem;
     transform: translateZ(5rem);
+}
+
+.front-side::before,
+.front-side::after {
+    content: '';
+    width: 100%;
+    height: 10rem;
+    background-color: var(--primary-2);
+    position: absolute;
+    border: 2px solid var(--black);
+}
+
+.front-side::before {
+    top: 0;
+    left: 0;
+    transform: rotateX(-90deg);
+    transform-origin: top;
+}
+
+.front-side::after {
+    bottom: 0;
+    left: 0;
+    transform: rotateX(90deg);
+    transform-origin: bottom;
 }
 
 .front-side img {
@@ -102,6 +130,36 @@ html {
 
 .back-side {
     transform: translateZ(-5rem);
+}
+
+.back-side::before,
+.back-side::after {
+    content: 'Visula';
+    width: 10rem;
+    height: 100%;
+    background-color: var(--primary-3);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--dark);
+    border: 2px solid var(--black);
+}
+
+.back-side::before {
+    top: 0;
+    left: 0;
+    transform: rotateY(-90deg);
+    transform-origin: left; 
+}
+
+.back-side::after {
+    top: 0;
+    right: 0;
+    transform: rotateY(90deg);
+    transform-origin: right;
 }
 
 .back-side i {
