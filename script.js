@@ -1,6 +1,8 @@
 let x = 0
-let y = 0
+let y = 20
 let z = 0
+let bool = true
+let interval
 const cube = document.querySelector('.cube')
 
 document.querySelector('.top-x-control').
@@ -29,12 +31,27 @@ document.querySelector('.bottom-z-control').
 })
 
 const playPause = () => {
-    setInterval(() => {
-        cube.style.transform = `rotateX(${x}deg) rotateY(${y++}deg) rotateZ(${z}deg)` 
-    }, 100)
+    if (bool) {
+        interval = setInterval(() => {
+            cube.style.transform = `rotateX(${x}deg) rotateY(${y++}deg) rotateZ(${z}deg)` 
+        }, 100)
+    } else {
+        clearInterval(interval)
+    }    
 }
 
-// playPause()
+playPause()
+
+document.querySelector('.controls').
+    addEventListener('mouseover', () => {
+        bool = false
+        playPause()
+})
+document.querySelector('.controls').
+    addEventListener('mouseout', () => {
+        bool = true
+        playPause()
+})
 
 const slideshowDivs = () => {
     for (let i = 1; i <= 5; i++) {
