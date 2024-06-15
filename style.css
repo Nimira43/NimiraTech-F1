@@ -574,10 +574,25 @@ body {
     font-size: 10rem;
     color: var(--primary);
     text-shadow: 0.1rem 0.1rem 0 var(--light);
+    margin-bottom: 2rem;
 }
 
 .progress-bar {
-    
+    width: 22rem;
+    height: 0.3rem;
+    background-color: var(--light);
+    border-radius: 5rem;
+    position: relative;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: var(--primary);
 }
 
 .laptop-info {
