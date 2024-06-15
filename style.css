@@ -542,7 +542,17 @@ body {
 
 .section-3-content img {
     width: inherit;
-    /* background-color: var(--black); */
+}
+
+.laptop-img-1 {
+    transform: rotateX(-80deg);
+    transform-origin: bottom;
+    overflow: hidden;
+}
+
+.change .laptop-img-1 {
+    transform: rotateX(0);
+    transition: transform 3s;
 }
 
 .loading-wrapper {
@@ -550,14 +560,15 @@ body {
     top: 4%;
     width: 60%;
     height: 85%;
-    /* background: linear-gradient(
-        rgba(255 ,255 ,255, 0.4),
-        rgba(255, 255, 255, 0.4)),
-        url('./images/laptops/desktop.png') center no-repeat ; */
-    
     background: url(images/laptops/desktop.png) no-repeat center;
     background-size: cover;
     z-index: -1;
+    opacity: 0;
+}
+
+.change .loading-wrapper {
+    opacity: 1;
+    transition: opacity 1s 2s;
 }
 
 .loading {
@@ -568,6 +579,11 @@ body {
     left: 0;
     background-color: var(--black);
     flex-direction: column;
+}
+
+.change .loading {
+    opacity: 0;
+    transition: 1s 5s;
 }
 
 .loading i {
@@ -590,9 +606,14 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 50%;
+    width: 0;
     height: 100%;
     background-color: var(--primary);
+}
+
+.change .progress-bar::after {
+    width: 100%;
+    transition: width 1s 3s
 }
 
 .laptop-info {
@@ -600,6 +621,11 @@ body {
     width: 70rem;
     text-align: center;
     opacity: 0;
+}
+
+.change .laptop-info {
+    opacity: 1;
+    transition: opacity 1s 6s;
 }
 
 .laptop-info-heading {
@@ -633,3 +659,5 @@ body {
     color: var(--primary);
     background-color: var(--black);
 }
+
+
