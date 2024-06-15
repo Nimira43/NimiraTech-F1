@@ -733,8 +733,7 @@ body {
     width: 35rem;
     height: 35rem;
     object-fit: contain;
-    box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.5);
-                
+    box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.5);             
 }
 
 .watch-faces {
@@ -789,4 +788,26 @@ body {
     top: 50%;
     left: 2rem;
     transform: translateY(-50%);
+}
+
+.watch-btn {
+    position: absolute;
+    bottom: 30vh;
+    right: 15%;
+    width: 13rem;
+    height: 5rem;
+    background-color: var(--dark);
+    color: var(--light);
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.watch-btn:hover {
+    background-color: var(--dark);
+    color: var(--primary);
 }
