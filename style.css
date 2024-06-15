@@ -517,3 +517,104 @@ body {
         width: 75vw;
     }
 }
+
+.section-3 {
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary);
+    flex-direction: column;
+    padding: 15rem 0;
+}
+
+.section-3-heading {
+    font-size: 10rem;
+    font-weight: 200;
+    color: var(--dark);
+    margin-bottom: 15rem;
+}
+
+.section-3-content {
+    width: 80%;
+    flex-direction: column;
+    perspective: 1000rem;
+    position: relative;
+}
+
+.section-3-content img {
+    width: inherit;
+    /* background-color: var(--black); */
+}
+
+.loading-wrapper {
+    position: absolute;
+    top: 4%;
+    width: 60%;
+    height: 85%;
+    /* background: linear-gradient(
+        rgba(255 ,255 ,255, 0.4),
+        rgba(255, 255, 255, 0.4)),
+        url('./images/laptops/desktop.png') center no-repeat ; */
+    
+    background: url(images/laptops/desktop.png) no-repeat center;
+    background-size: cover;
+    z-index: -1;
+}
+
+.loading {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--black);
+    flex-direction: column;
+}
+
+.loading i {
+    font-size: 10rem;
+    color: var(--primary);
+    text-shadow: 0.1rem 0.1rem 0 var(--light);
+}
+
+.progress-bar {
+    
+}
+
+.laptop-info {
+    position: absolute;
+    width: 70rem;
+    text-align: center;
+    opacity: 0;
+}
+
+.laptop-info-heading {
+    font-size: 6rem;
+    font-weight: 400;
+    color: var(--dark)
+}
+
+.laptop-price {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin: 3rem 0;
+    color: var(--dark);
+}
+
+.laptop-btn {
+    width: 25rem;
+    height: 5rem;
+    background: var(--dark);
+    border: none;
+    border-radius: 0.3rem;
+    color: var(--light);
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.laptop-btn:hover {
+    color: var(--primary);
+    background-color: var(--black);
+}
